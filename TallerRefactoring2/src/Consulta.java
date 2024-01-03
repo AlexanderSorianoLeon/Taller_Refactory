@@ -2,7 +2,7 @@ import java.util.List;
 import java.time.LocalDate;
 
 public class Consulta {
-    public LocalDate fechaConsulta;
+    private LocalDate fechaConsulta;
     private String hora;
     private Paciente paciente;
     private Medico medico;
@@ -17,10 +17,16 @@ public class Consulta {
         this.hora = hora;
         this.servicioMedico = servicioMedico;
         this.paciente = paciente;
-        this.medico = medico;
+        this.medico = medico;   
         this.realizada = false;
     }
+    public LocalDate getFechaConsulta() {
+        return fechaConsulta;
+    }
 
+    public void setFechaConsulta(LocalDate fechaConsulta) {
+        this.fechaConsulta = fechaConsulta;
+    }
     public String getHora() {
         return hora;
     }
