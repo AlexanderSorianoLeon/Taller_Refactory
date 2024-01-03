@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class HistorialMedico {
@@ -10,19 +11,29 @@ public class HistorialMedico {
         this.recetasMedicas = new ArrayList<>();
     }
 
+    // Colección encapsulada para consultas
     public List<Consulta> getConsultas() {
-        return consultas;
+        return Collections.unmodifiableList(consultas);
     }
 
-    public void setConsultas(List<Consulta> consultas) {
-        this.consultas = consultas;
+    public void agregarConsulta(Consulta consulta) {
+        this.consultas.add(consulta);
     }
 
+    public void removerConsulta(Consulta consulta) {
+        this.consultas.remove(consulta);
+    }
+
+    // Colección encapsulada para recetas médicas
     public List<RecetaMedica> getRecetasMedicas() {
-        return recetasMedicas;
+        return Collections.unmodifiableList(recetasMedicas);
     }
 
-    public void setRecetasMedicas(List<RecetaMedica> recetasMedicas) {
-        this.recetasMedicas = recetasMedicas;
+    public void agregarRecetaMedica(RecetaMedica recetaMedica) {
+        this.recetasMedicas.add(recetaMedica);
+    }
+
+    public void removerRecetaMedica(RecetaMedica recetaMedica) {
+        this.recetasMedicas.remove(recetaMedica);
     }
 }
